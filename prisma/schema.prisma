@@ -16,7 +16,7 @@ model User {
   address      String?
   password     String
   verified     Boolean       @default(false)
-  role         String        @default("user")
+  role         Role          @default(none)
   Cart         Cart[]
   Verification Verification?
 }
@@ -69,4 +69,10 @@ model Images {
   img       String
   productId Int
   Product   Product @relation(fields: [productId], references: [id])
+}
+
+enum Role {
+  user
+  admin
+  none
 }

@@ -15,7 +15,7 @@ router.post(
 )
 router.get(
   '/',
-  userVerify(['user', 'admin']),
+  userVerify(['user', 'admin', 'none']),
   categoryController.getAllCategory
 )
 router.get('/:id', userVerify(['admin']), categoryController.getCategoryById)
